@@ -1,0 +1,28 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<h1></h1>
+<table border="1">
+    <td>
+        <button class="bubble-legend-symbol"><a style="text-decoration: none" href="/create">CREATE</a></button>
+    </td>
+    <td>
+        <button class="bubble-legend-symbol"><a style="text-decoration: none" href="/search">SEARCH</a></button>
+    </td>
+
+    <tr th:each="product, loop : ${productShow}">
+        <td th:text="${loop.count}"></td>
+        <td th:text="${product.name}"></td>
+        <td><img th:src="${product.img}" width="200" height="150"></td>
+        <td>
+            <button><a style="text-decoration: none" th:href="@{/edit(index=${loop.index})}">EDIT</a></button>
+        </td>
+        <td>
+            <button><a style="text-decoration: none" th:href="@{/delete(index=${loop.index})}">DELETE</a></button>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

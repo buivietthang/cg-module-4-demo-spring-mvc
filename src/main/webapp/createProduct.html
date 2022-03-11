@@ -1,0 +1,22 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="col-2">
+    <div class="form-container">
+        <div class="form-btn">
+            <span onclick="register()">Create Product</span>
+            <hr id="Indicator">
+        </div>
+        <form action="/createButton" method="post" th:object="${productCreate}" enctype="multipart/form-data">
+            <p><input th:field="${productCreate.id}" placeholder="id"></p> <br>
+            <p><input th:field="${productCreate.name}" placeholder="name"></p><br>
+            <p><input name="upImg" type="file"></p>
+            <button type="submit" class="btn">Create</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

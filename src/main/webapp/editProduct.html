@@ -1,0 +1,23 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="col-2">
+    <div class="form-container">
+        <div class="form-btn">
+            <span>Edit Product</span>
+            <hr id="Indicator">
+        </div>
+        <form method="post" th:object="${productEdit}" enctype="multipart/form-data">
+            <p><input th:field="${productEdit.id}" placeholder="id"></p><br>
+            <p><input th:field="${productEdit.name}" placeholder="name"></p><br>
+            <p><img th:src="${productEdit.img}" width="200" height="200"></p><br>
+            <p><input type="file" name="upImg2"></p>
+            <button type="submit" class="btn">Edit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
